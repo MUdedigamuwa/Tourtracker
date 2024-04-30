@@ -1,0 +1,215 @@
+/* Styles for the navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Adjusted height */
+  background-color: #0077b6; /* Initial background color */
+  transition: background-color 0.5s ease; /* Smooth transition for color change */
+  z-index: 1000;
+  overflow-x:auto; /* Enable horizontal scrolling */
+  overflow-y: auto; /* Hide vertical scrollbar */
+  box-sizing: border-box; /* Ensure padding is included in width and height */
+  display: flex;
+  align-items: center;
+  font-size: 110%;
+
+}
+
+/* Adjusted styles for screens between 601px and 1024px */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+    height: 70px; /* Adjusted height */
+    font-size: 105%; /* Adjusted font size */
+  }
+}
+
+/* Adjusted styles for screens larger than 1024px */
+@media only screen and (min-width: 1025px) {
+  .navbar {
+    height: 80px; /* Adjusted height */
+    font-size: 110%; /* Adjusted font size */
+  }
+}
+
+/* Additional styles for the navigation links */
+.navbar a {
+  color: white; /* Initial link color */
+  text-align: left;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.5s ease; /* Smooth transition for color change */
+}
+
+/* Adjusted font sizes for navigation links based on screen size */
+@media only screen and (max-width: 600px) {
+  .navbar a {
+    font-size: 70%; /* Adjusted font size for smaller screens */
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .navbar a {
+    font-size: 90%; /* Adjusted font size for medium-sized screens */
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .navbar a {
+    font-size: 100%; /* Adjusted font size for larger screens */
+    text-align: left;
+  }
+}
+
+/* Change link color when scrolled */
+.scrolled .navbar a {
+  color: white; /* Change link color to white */
+}
+
+/* Hide video when scrolled */
+.scrolled .floating-video {
+  opacity: 0; /* Make the video transparent */
+}
+
+/* Styles for the video */
+.floating-video {
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Ensure the video is below the navigation bar */
+  width: 100%; /* Set width to 100% to adjust with the viewport */
+  height: auto;
+}
+
+/* Styles for the logo */
+.logo {
+  height: 50px; /* Set the height to match the navigation bar's height */
+  width: auto; /* Let the width adjust proportionally */
+}
+
+/* Style for the logo image */
+.logo img {
+  height: 100%; /* Set the height of the logo image to 100% of its container */
+  width: auto; /* Let the width adjust proportionally */
+}
+
+@media only screen and (max-width: 600px) {
+  .logo img {
+    height: 50px; /* Adjusted logo height for smaller screens */
+    width: auto; /* Let the width adjust proportionally */
+  }
+}
+
+/* Styles for screens between 601px and 1024px */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .logo img {
+    height: 50px; /* Adjusted logo height for medium-sized screens */
+    width: auto; /* Let the width adjust proportionally */
+  }
+}
+
+/* Styles for screens larger than 1024px */
+@media only screen and (min-width: 1025px) {
+  .logo img {
+    height: 40px; /* Adjusted logo height for larger screens */
+    width: auto; /* Let the width adjust proportionally */
+  }
+}
+
+/* Styles for the navigation links container */
+.nav-links {
+  display: flex;
+  margin-left:auto ;
+}
+
+/* Align navigation links to the right */
+.nav-links a {
+  margin-right:auto;
+}
+
+/* Styles for the header text */
+.header-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  animation: fade-in 2s forwards; /* Animation to fade in the text */
+  z-index: 1; /* Ensure text is above the video */
+}
+
+/* Styles for the video container */
+.video-container {
+  position: relative; /* Ensure the container is positioned relative */
+  width: 100%;
+  height: 100vh; /* Adjust as needed */
+  z-index: -1;
+  top: 100px;
+}
+
+/* Keyframes for fading in the header text */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Styles for the content */
+.content {
+  width: 100%;
+  position: fixed;
+  top: 60%;
+  transform: translateY(-50%);
+  text-align: center;
+  
+}
+
+/* Additional styles for heading within content */
+.content h1 {
+  font-family: Cormorant-Light;
+  font-size: 50px;
+  margin-top: 100px;
+  margin-left: 30px;
+  color: white;
+  text-align: center;
+}
+
+.content h3 {
+ font-family: Cormorant-Light;
+  font-size: 20px;
+  margin-top: 100px;
+  margin-left: 30px;
+  color: #0077b6;
+  text-align: center;
+ 
+}
+
+.contact-bar {
+  
+  color:white ; /* Text color */
+  padding: 1px 2px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: center; /* Align text to the center */
+  position: fixed; /* Fix the contact bar position */
+  top: 80px; /* Adjust top position to match the height of the navbar */
+  left: 0;
+  width: 100%; /* Take the full width of the viewport */
+  z-index: 999; /* Ensure the contact bar appears above other content */
+  background-color: transparent; /* Set background color with transparency */
+  transition: top 0.5s, opacity 0.5s; /* Add transition for smooth animation */
+}
+
+.contact-bar.hidden {
+  top: -40px; /* Move contact bar above the viewport */
+  opacity: 0; /* Make contact bar transparent */
+}
+.content h3.hidden {
+  display: none;
+}
